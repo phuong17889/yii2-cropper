@@ -1,5 +1,5 @@
 {
-    "name": "budyaga/yii2-cropper",
+    "name": "navatech/yii2-cropper",
     "description": "Yii-Framework widget for uploading and cropping images",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","upload","crop"],
@@ -8,6 +8,10 @@
         {
             "name": "Sergey Krivochenko",
             "email": "budyaga@gmail.com"
+        },
+        {
+            "name": "Le Phuong",
+            "email": "phuong17889@gmail.com"
         }
     ],
     "require": {
@@ -18,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "budyaga\\cropper\\": ""
+            "navatech\\cropper\\": ""
         }
     }
 }

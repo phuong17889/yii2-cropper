@@ -1,6 +1,6 @@
 <?php
 
-namespace budyaga\cropper\assets;
+namespace navatech\cropper\assets;
 
 use yii\web\AssetBundle;
 
@@ -12,7 +12,7 @@ class CropperAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $sourcePath = '@budyaga/cropper/web/';
+    public $sourcePath = '@navatech/cropper/web/';
 
     /**
      * @inheritdoc
@@ -33,7 +33,7 @@ class CropperAsset extends AssetBundle
      */
     public $depends = [
         'yii\web\JqueryAsset',
-        'budyaga\cropper\assets\JcropAsset',
-        'budyaga\cropper\assets\SimpleAjaxUploaderAsset',
+        'navatech\cropper\assets\JcropAsset',
+        'navatech\cropper\assets\SimpleAjaxUploaderAsset',
     ];
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace budyaga\cropper;
+namespace navatech\cropper;
 
-use budyaga\cropper\assets\CropperAsset;
+use navatech\cropper\assets\CropperAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;

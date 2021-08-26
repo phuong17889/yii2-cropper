@@ -1,6 +1,6 @@
 <?php
 
-namespace budyaga\cropper\assets;
+namespace navatech\cropper\assets;
 
 use yii\web\AssetBundle;
 
