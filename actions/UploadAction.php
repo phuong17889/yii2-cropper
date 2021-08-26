@@ -15,6 +15,8 @@ use Yii;
 
 class UploadAction extends Action
 {
+	const TYPE_URL = 'url';
+	const TYPE_BASE64 = 'base64';
     public $path;
     public $url;
     public $uploadParam = 'file';
@@ -24,6 +26,7 @@ class UploadAction extends Action
     public $height = 200;
     public $jpegQuality = 100;
     public $pngCompressionLevel = 1;
+    public $responseType = self::TYPE_URL;
 
     /**
      * @inheritdoc
@@ -31,7 +34,7 @@ class UploadAction extends Action
     public function init()
     {
         Widget::registerTranslations();
-        if ($this->url === null) {
+	    if ($this->responseType == self::TYPE_URL && $this->url === null) {
             throw new InvalidConfigException(Yii::t('cropper', 'MISSING_ATTRIBUTE', ['attribute' => 'url']));
         } else {
             $this->url = rtrim($this->url, '/') . '/';
@@ -40,6 +43,9 @@ class UploadAction extends Action
             throw new InvalidConfigException(Yii::t('cropper', 'MISSING_ATTRIBUTE', ['attribute' => 'path']));
         } else {
             $this->path = rtrim(Yii::getAlias($this->path), DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
+	        if (!file_exists($this->path)) {
+		        mkdir($this->path, 0777, true);
+	        }
         }
     }
 
@@ -84,10 +90,20 @@ class UploadAction extends Action
                     ;
                 } else {
                     $saveOptions = ['jpeg_quality' => $this->jpegQuality, 'png_compression_level' => $this->pngCompressionLevel];
-                    if ($image->save($this->path . $model->{$this->uploadParam}->name, $saveOptions)) {
-                        $result = [
-                            'filelink' => $this->url . $model->{$this->uploadParam}->name
-                        ];
+	                $imagePath = $this->path . $model->{$this->uploadParam}->name;
+	                if ($image->save($imagePath, $saveOptions)) {
+                    	if($this->responseType == self::TYPE_URL) {
+		                    $result = [
+			                    'filelink' => $this->url . $model->{$this->uploadParam}->name
+		                    ];
+	                    } else {
+		                    $type = pathinfo($imagePath, PATHINFO_EXTENSION);
+		                    $data = file_get_contents($imagePath);
+		                    $result = [
+			                    'filedata' => 'data:image/' . $type . ';base64,' . base64_encode($data)
+		                    ];
+		                    unlink($imagePath);
+	                    }
                     } else {
                         $result = [
                             'error' => Yii::t('cropper', 'ERROR_CAN_NOT_UPLOAD_FILE')
