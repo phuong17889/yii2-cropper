@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist budyaga/yii2-cropper "*"
+php composer.phar require --prefer-dist navatech/yii2-cropper "@dev"
 ```
 
 or add
 
 ```
-"budyaga/yii2-cropper": "*"
+"navatech/yii2-cropper": "@dev"
 ```
 
 to the require section of your `composer.json` file.
@@ -27,7 +27,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```
-use budyaga\cropper\Widget;
+use navatech\cropper\Widget;
 ```
 
 
@@ -65,7 +65,7 @@ public function actions()
 {
     return [
         'uploadPhoto' => [
-            'class' => 'budyaga\cropper\actions\UploadAction',
+            'class' => 'navatech\cropper\actions\UploadAction',
             'url' => 'http://your_domain.com/uploads/user/photo',
             'path' => '@frontend/web/uploads/user/photo',
         ]
@@ -85,6 +85,7 @@ Action has following parameters:
 | height  | The final height of the image after cropping. It must match the value of a similar parameter of the widget. | 200    |No |
 | jpegQuality  | Quality of cropped image (JPG) | 100    |No |
 | pngCompressionLevel  | Quality of cropped image (PNG) | 1    |No |
+| responseType  | Type of response (UploadAction::TYPE_URL or UploadAction::TYPE_BASE64)  | UploadAction::TYPE_URL    |No |
 
 
 You can use this widget on frontend and backend. For example: user can change his userpic and administrator can change users userpic.
