@@ -6,7 +6,7 @@
  * Time: 19:20
  */
 
-namespace navatech\cropper\assets;
+namespace phuong17889\cropper\assets;
 
 
 use yii\web\AssetBundle;

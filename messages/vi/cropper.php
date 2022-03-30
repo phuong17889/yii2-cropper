@@ -17,13 +17,13 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    'DEFAULT_LABEL' => 'Click and select or drag an image file here',
-    'CROP_PHOTO' => 'Crop image',
-    'DELETE_PHOTO' => 'Delete image',
-    'ERROR_CAN_NOT_UPLOAD_FILE' => 'Can`t upload file',
-    'MISSING_ATTRIBUTE' => 'Attribute "{attribute}" must be specified',
-    'ONLY_POST_REQUEST' => 'Allowed only POST-request',
-    'UPLOAD_ANOTHER_PHOTO' => 'Upload another photo',
-    'TOO_BIG_ERROR' => 'Exceeded the allowable size of the file ({size} Mb)',
-    'EXTENSION_ERROR' => 'Enable only the following file formats: {formats}'
+    'DEFAULT_LABEL' => 'Bấm và chọn, hoặc kéo thả tệp ảnh vào đây',
+    'CROP_PHOTO' => 'Cắt ảnh',
+    'DELETE_PHOTO' => 'Xóa ảnh',
+    'ERROR_CAN_NOT_UPLOAD_FILE' => 'Không thể tải tệp lên',
+    'MISSING_ATTRIBUTE' => 'Trường "{attribute}" là bắt buộc',
+    'ONLY_POST_REQUEST' => 'Chỉ chấp nhận phương thức POST',
+    'UPLOAD_ANOTHER_PHOTO' => 'Tải lênh ảnh khác',
+    'TOO_BIG_ERROR' => 'Vượt quá dung lượng mỗi tệp ({size}Mb)',
+    'EXTENSION_ERROR' => 'Chỉ chấp nhận định dạng sau: {formats}'
 ];

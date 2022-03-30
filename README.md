@@ -10,13 +10,13 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist navatech/yii2-cropper "@dev"
+php composer.phar require --prefer-dist phuong17889/yii2-cropper "@dev"
 ```
 
 or add
 
 ```
-"navatech/yii2-cropper": "@dev"
+"phuong17889/yii2-cropper": "@dev"
 ```
 
 to the require section of your `composer.json` file.
@@ -27,7 +27,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```
-use navatech\cropper\Widget;
+use phuong17889\cropper\Widget;
 ```
 
 
@@ -65,7 +65,7 @@ public function actions()
 {
     return [
         'uploadPhoto' => [
-            'class' => 'navatech\cropper\actions\UploadAction',
+            'class' => 'phuong17889\cropper\actions\UploadAction',
             'url' => 'http://your_domain.com/uploads/user/photo',
             'path' => '@frontend/web/uploads/user/photo',
         ]
