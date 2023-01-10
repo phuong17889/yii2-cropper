@@ -17,6 +17,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "yiisoft/yii2-imagine": "*",
+        "phuongdev89/yii2-base": "*",
         "bower-asset/jcrop": "=0.9.12",
         "bower-asset/simple-ajax-uploader": "2.6.1"
     },
