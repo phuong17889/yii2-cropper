@@ -1,6 +1,6 @@
 <?php
 
-namespace phuong17889\cropper\actions;
+namespace phuongdev89\cropper\actions;
 
 use yii\base\Action;
 use yii\base\DynamicModel;
@@ -8,7 +8,7 @@ use yii\base\InvalidConfigException;
 use yii\web\BadRequestHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
-use phuong17889\cropper\Widget;
+use phuongdev89\cropper\Widget;
 use yii\imagine\Image;
 use Imagine\Image\Box;
 use Yii;
@@ -51,6 +51,7 @@ class UploadAction extends Action
 
     /**
      * @inheritdoc
+     * @throws BadRequestHttpException
      */
     public function run()
     {

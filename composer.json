@@ -1,5 +1,5 @@
 {
-    "name": "phuong17889/yii2-cropper",
+    "name": "phuongdev89/yii2-cropper",
     "description": "Yii-Framework widget for uploading and cropping images",
     "type": "yii2-extension",
     "keywords": ["yii2","extension","upload","crop"],
@@ -10,8 +10,8 @@
             "email": "budyaga@gmail.com"
         },
         {
-            "name": "Le Phuong",
-            "email": "phuong17889@gmail.com"
+            "name": "Phuong Dev",
+            "email": "phuongdev89@gmail.com"
         }
     ],
     "require": {
@@ -22,7 +22,10 @@
     },
     "autoload": {
         "psr-4": {
-            "phuong17889\\cropper\\": ""
+            "phuongdev89\\cropper\\": ""
         }
+    },
+    "extra" : {
+        "bootstrap" : "phuongdev89\\cropper\\Bootstrap"
     }
 }
